@@ -20,6 +20,7 @@ class Generator(nn.Module):
     # forward method
     def forward(self, z):
         z = F.leaky_relu(self.fc1(z), 0.2)
+        print(z.shape)
         z = F.leaky_relu(self.fc2(z), 0.2)
         z = F.leaky_relu(self.fc3(z), 0.2)
         img = torch.tanh(self.fc4(z))
