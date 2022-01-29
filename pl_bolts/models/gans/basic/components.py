@@ -27,7 +27,7 @@ class Generator(nn.Module):
         img = torch.tanh(self.fc4(z))
         print("self img shape=", *self.img_shape)
         print("img size =", img.size(3))
-        img = img.view(img.size(0), *self.img_shape)
+#         img = img.view(img.size(2), *self.img_shape)
         
         return img
 
