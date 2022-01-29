@@ -26,7 +26,7 @@ class Generator(nn.Module):
         z = F.leaky_relu(self.fc3(z), 0.2)
         img = torch.tanh(self.fc4(z))
         print("self img shape=", *self.img_shape)
-        print("img size =", img.size)
+        print("img size =", img.size(3))
         img = img.view(img.size(0), *self.img_shape)
         
         return img
