@@ -22,9 +22,20 @@ class Generator(nn.Module):
         z = F.leaky_relu(self.fc1(z), 0.2)
         print(z.shape)
         z = F.leaky_relu(self.fc2(z), 0.2)
+        print(z.shape)
         z = F.leaky_relu(self.fc3(z), 0.2)
         img = torch.tanh(self.fc4(z))
+        print("self img shape=", *self.img_shape)
+        print("img size 0=", iInputting to model
+Inputting to combine_planner
+Inputting to Neural A* model
+Inputting to VAE
+In __init__
+self.fc1.out_features= 256
+self.fc2.out_features= 512
+self.fc3.out_features= 1024mg.size(0))
         img = img.view(img.size(0), *self.img_shape)
+        
         return img
 
 
