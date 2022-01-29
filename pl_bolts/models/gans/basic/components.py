@@ -10,10 +10,13 @@ class Generator(nn.Module):
         feats = int(np.prod(img_shape))
         self.img_shape = img_shape
         self.fc1 = nn.Linear(latent_dim, hidden_dim)
+        print("self.fc1.out_features=", self.fc1.out_features)
         self.fc2 = nn.Linear(self.fc1.out_features, self.fc1.out_features * 2)
+        print("self.fc2.out_features=", self.fc2.out_features)
         self.fc3 = nn.Linear(self.fc2.out_features, self.fc2.out_features * 2)
+        print("self.fc3.out_features=", self.fc3.out_features)
         self.fc4 = nn.Linear(self.fc3.out_features, feats)
-
+        print("Feats=", feats)
     # forward method
     def forward(self, z):
         z = F.leaky_relu(self.fc1(z), 0.2)
