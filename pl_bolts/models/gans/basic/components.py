@@ -7,7 +7,8 @@ from torch.nn import functional as F
 class Generator(nn.Module):
     def __init__(self, latent_dim, img_shape, hidden_dim=256):
         super().__init__()
-        feats = int(np.prod(img_shape))
+#         feats = int(np.prod(img_shape))
+        feats = 32
         self.img_shape = img_shape
         self.fc1 = nn.Linear(latent_dim, hidden_dim)
         print("self.fc1.out_features=", self.fc1.out_features)
