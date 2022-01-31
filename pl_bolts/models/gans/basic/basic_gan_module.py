@@ -115,7 +115,7 @@ class GAN(LightningModule):
 
     def training_step(self, batch, batch_idx, optimizer_idx):
         x, _ = batch
-
+        print("Shape of x is =", x.shape)
         # train generator
         result = None
         if optimizer_idx == 0:
