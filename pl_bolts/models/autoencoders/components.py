@@ -192,11 +192,11 @@ class ResNetEncoder(nn.Module):
         self.inplanes = 64
         self.first_conv = first_conv
         self.maxpool1 = maxpool1
-        print("Channels = 2") 
+        print("Channels = 1") 
         if self.first_conv:
-            self.conv1 = nn.Conv2d(2, self.inplanes, kernel_size=7, stride=2, padding=3, bias=False)
+            self.conv1 = nn.Conv2d(1, self.inplanes, kernel_size=7, stride=2, padding=3, bias=False)
         else:
-            self.conv1 = nn.Conv2d(2, self.inplanes, kernel_size=3, stride=1, padding=1, bias=False)
+            self.conv1 = nn.Conv2d(1, self.inplanes, kernel_size=3, stride=1, padding=1, bias=False)
 
         self.bn1 = nn.BatchNorm2d(self.inplanes)
         self.relu = nn.ReLU(inplace=True)
